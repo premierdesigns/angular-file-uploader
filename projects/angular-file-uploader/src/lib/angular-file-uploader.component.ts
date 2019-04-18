@@ -20,6 +20,7 @@ export class AngularFileUploaderComponent implements OnInit, OnChanges {
   formatsAllowed: string;
   multiple: boolean;
   headers: any;
+  responseType: any;
   hideResetBtn: boolean;
   hideSelectBtn: boolean;
 
@@ -61,6 +62,7 @@ export class AngularFileUploaderComponent implements OnInit, OnChanges {
         this.config["formatsAllowed"] || ".jpg,.png,.pdf,.docx,.txt,.gif,.jpeg";
       this.multiple = this.config["multiple"] || false;
       this.headers = this.config["uploadAPI"]["headers"] || {};
+      this.responseType = this.config["uploadAPI"]["responseType"] || {};
       let defaultReplaceTextsValues: ReplaceTexts =  {
         selectFileBtn: this.multiple ? 'Select Files' : 'Select File',
         resetBtn: 'Reset',
@@ -270,6 +272,9 @@ export class AngularFileUploaderComponent implements OnInit, OnChanges {
     for (const key of Object.keys(this.headers)) {
       // Object.keys will give an Array of keys
       xhr.setRequestHeader(key, this.headers[key]);
+    }
+    if (this.responseType) {
+      xhr.responseType = this.responseType;
     }
     //let token = sessionStorage.getItem("token");
     //xhr.setRequestHeader("Content-Type", "text/plain;charset=UTF-8");
