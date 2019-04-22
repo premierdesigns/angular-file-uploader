@@ -1,48 +1,50 @@
-import { Component, ViewChild } from '@angular/core';
-//import { AngularFileUploaderComponent } from "angular-file-uploader";
+import {Component, OnInit} from '@angular/core';
+// import { AngularFileUploaderComponent } from "angular-file-uploader";
 
 @Component({
   selector: 'ld-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 
   resetUpload1: boolean;
   resetUpload2: boolean;
   resetUpload3: boolean;
-  token: string = "lkdjlfjld";
+  token = 'lkdjlfjld';
   afuConfig1 = {
-    multiple:true,
+    multiple: true,
     uploadAPI: {
-      url: "https://slack.com/api/files.upload"
+      url: 'https://slack.com/api/files.upload'
     }
   };
 
   afuConfig2 = {
-    theme: "attachPin",
-    hideProgressBar: "true",
-    hideResetBtn: "true",
-    maxSize: "1",
+    theme: 'attachPin',
+    hideProgressBar: 'true',
+    hideResetBtn: 'true',
+    maxSize: '1',
     uploadAPI: {
-      url: "https://slack.com/api/files.upload",
+      url: 'https://slack.com/api/files.upload',
       headers: {
-        "Content-Type": "multipart/form-data"
-      }
+        'Content-Type': 'multipart/form-data'
+      },
+      responseType: 'blob'
     },
-    formatsAllowed: ".jpg,.png",
-    multiple: "true"
+    formatsAllowed: '.jpg,.png',
+    multiple: 'true'
   };
+
   afuConfig3 = {
-    theme: "dragNDrop",
+    theme: 'dragNDrop',
     hideProgressBar: true,
     hideResetBtn: true,
     hideSelectBtn: true,
-    maxSize: "1",
+    maxSize: '1',
     uploadAPI: {
-      url: "https://slack.com/api/files.upload"
+      url: 'https://slack.com/api/files.upload'
     },
-    formatsAllowed: ".jpg,.png",
+    formatsAllowed: '.jpg,.png',
     multiple: true
   };
   /*
@@ -74,14 +76,15 @@ export class AppComponent {
       });
     }) */
   }
+
   DocUpload(env) {
     console.log(env);
   }
 
   resetfu(id) {
-    //this.rfu.resetFileUpload(id);
-    //id == 1 ? this.afuref1.resetFileUpload() : this.afuref2.resetFileUpload();
+    // this.rfu.resetFileUpload(id);
+    // id == 1 ? this.afuref1.resetFileUpload() : this.afuref2.resetFileUpload();
     this[`afuref${id}`].resetFileUpload();
-    //this.resetUpload1 = true;
+    // this.resetUpload1 = true;
   }
 }

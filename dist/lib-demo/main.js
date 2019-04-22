@@ -591,7 +591,7 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
-//import { AngularFileUploaderComponent } from "angular-file-uploader";
+// import { AngularFileUploaderComponent } from "angular-file-uploader";
 var AppComponent = /** @class */ (function () {
     /*
     afuConfig2 = {
@@ -613,37 +613,38 @@ var AppComponent = /** @class */ (function () {
     // @ViewChild("afu2") private afuref2: AngularFileUploaderComponent;
     // @ViewChild("afu3") private afuref3: AngularFileUploaderComponent;
     function AppComponent() {
-        this.token = "lkdjlfjld";
+        this.token = 'lkdjlfjld';
         this.afuConfig1 = {
             multiple: true,
             uploadAPI: {
-                url: "https://slack.com/api/files.upload"
+                url: 'https://slack.com/api/files.upload'
             }
         };
         this.afuConfig2 = {
-            theme: "attachPin",
-            hideProgressBar: "true",
-            hideResetBtn: "true",
-            maxSize: "1",
+            theme: 'attachPin',
+            hideProgressBar: 'true',
+            hideResetBtn: 'true',
+            maxSize: '1',
             uploadAPI: {
-                url: "https://slack.com/api/files.upload",
+                url: 'https://slack.com/api/files.upload',
                 headers: {
-                    "Content-Type": "multipart/form-data"
-                }
+                    'Content-Type': 'multipart/form-data'
+                },
+                responseType: 'blob'
             },
-            formatsAllowed: ".jpg,.png",
-            multiple: "true"
+            formatsAllowed: '.xlsx',
+            multiple: 'true'
         };
         this.afuConfig3 = {
-            theme: "dragNDrop",
+            theme: 'dragNDrop',
             hideProgressBar: true,
             hideResetBtn: true,
             hideSelectBtn: true,
-            maxSize: "1",
+            maxSize: '1',
             uploadAPI: {
-                url: "https://slack.com/api/files.upload"
+                url: 'https://slack.com/api/files.upload'
             },
-            formatsAllowed: ".jpg,.png",
+            formatsAllowed: '.jpg,.png',
             multiple: true
         };
     }
@@ -659,10 +660,10 @@ var AppComponent = /** @class */ (function () {
         console.log(env);
     };
     AppComponent.prototype.resetfu = function (id) {
-        //this.rfu.resetFileUpload(id);
-        //id == 1 ? this.afuref1.resetFileUpload() : this.afuref2.resetFileUpload();
+        // this.rfu.resetFileUpload(id);
+        // id == 1 ? this.afuref1.resetFileUpload() : this.afuref2.resetFileUpload();
         this["afuref" + id].resetFileUpload();
-        //this.resetUpload1 = true;
+        // this.resetUpload1 = true;
     };
     AppComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
