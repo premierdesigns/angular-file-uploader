@@ -632,7 +632,7 @@ var AppComponent = /** @class */ (function () {
                 },
                 responseType: 'blob'
             },
-            formatsAllowed: '.xlsx',
+            formatsAllowed: '.jpg,.png',
             multiple: 'true'
         };
         this.afuConfig3 = {
